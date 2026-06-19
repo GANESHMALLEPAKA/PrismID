@@ -1,0 +1,138 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><title>PrismID Project Overview</title>
+<style>
+body { font-family: 'Segoe UI', Calibri, sans-serif; padding: 20px; }
+h1 { color: #2C3E50; border-bottom: 2px solid #3498DB; padding-bottom: 5px; }
+h2 { color: #2980B9; margin-top: 25px; }
+h3 { color: #34495E; }
+table { border-collapse: collapse; width: 100%; margin-top: 15px; margin-bottom: 15px; }
+th, td { border: 1px solid #BDC3C7; padding: 8px; text-align: left; }
+th { background-color: #ECF0F1; }
+pre { background-color: #F8F9FA; padding: 10px; border: 1px solid #E9ECEF; }
+code { font-family: Consolas, monospace; }
+</style>
+</head>
+<body>
+<h1>PrismID: Comprehensive Project Overview</h1>
+<h2>1. Executive Summary</h2>
+<p><strong>PrismID</strong> is a next-generation, AI-driven identity and trust lifecycle simulation platform. It is designed to demonstrate how modern security systems can continuously authenticate users in the background using behavioral heuristics, dynamic signal ingestion, and Zero-Knowledge Proofs (ZKP), without relying on static, high-friction authentication methods like traditional passwords.</p>
+<hr />
+<h2>2. Problem Statement</h2>
+<p>Traditional authentication relies heavily on static credentials (passwords, PINs) or binary one-time checks (MFA tokens). This paradigm presents several critical vulnerabilities and user experience flaws:
+- <strong>High Friction:</strong> Users are constantly interrupted by CAPTCHAs, SMS codes, and forced logouts, degrading the user experience.
+- <strong>Session Hijacking:</strong> Once authenticated, the session is often implicitly trusted. If a device is stolen or a session token is hijacked, the attacker has unrestricted access.
+- <strong>Data Privacy Risks:</strong> Centralized databases storing raw biometric or behavioral data become massive honeypots for hackers.
+- <strong>The "Black Box" Problem:</strong> Modern AI security systems often flag users or block transactions without providing clear, human-readable rationale, leading to locked accounts and frustrated support teams.</p>
+<hr />
+<h2>3. The PrismID Solution (Value Proposition)</h2>
+<p>PrismID solves these issues by shifting from <strong>Static Authentication</strong> to <strong>Continuous Trust Scoring</strong>. </p>
+<p><strong>How it helps:</strong>
+1. <strong>Invisible Security:</strong> Legitimate users experience zero friction. They are authenticated continuously in the background based on <em>how</em> they type, hold their device, and where they are located.
+2. <strong>Real-Time Threat Response:</strong> The moment a session deviates from established behavioral baselines (e.g., sudden "impossible travel" or mechanical typing speeds), the system dynamically introduces friction (like a biometric challenge) or halts the session.
+3. <strong>Zero-Data Exposure:</strong> By utilizing principles of Zero-Knowledge Proofs, the system validates that the user is who they claim to be without the server ever seeing or storing the raw telemetry data.
+4. <strong>Transparent Rationale:</strong> Every security decision is explained via the Explainable AI (XAI) engine, explicitly detailing the mathematical weights that led to an account lock or challenge.</p>
+<hr />
+<h2>4. System Architecture</h2>
+<p>PrismID operates across a robust, multi-tiered architecture that securely transmits and analyzes telemetry data in real time.</p>
+<h3>Tier 1: Client Interface (User Endpoint)</h3>
+<ul>
+<li><strong>Data Sensors:</strong> Constantly captures behavioral heuristics (e.g., Keystroke Cadence, Mouse Velocity) and device-level telemetry.</li>
+<li><strong>Local ZKP Hasher:</strong> Cryptographically anonymizes all behavioral data <em>before</em> it leaves the user's device, ensuring strict privacy compliance.</li>
+</ul>
+<h3>Tier 2: Edge Ingestion Layer</h3>
+<ul>
+<li><strong>Telemetry API Gateway:</strong> Receives the continuous stream of anonymized telemetry packets from the client interface.</li>
+<li><strong>Tamper-Proof Audit Ledger:</strong> Immutably records every packet, score recalculation, and system event for forensic review and regulatory compliance.</li>
+</ul>
+<h3>Tier 3: Explainable AI Risk Engine</h3>
+<ul>
+<li><strong>Behavioral Pattern Matcher:</strong> Compares the incoming data stream against established baseline models for the specific user.</li>
+<li><strong>Risk Heuristics Engine:</strong> Calculates live threat vectors based on anomalies (e.g., datacenter IPs, impossibly fast typing).</li>
+<li><strong>XAI Rationale Generator:</strong> Translates the raw algorithmic weights into human-readable data (Device Score, Network Score, Behavioral Score) to prevent "black box" lockouts.</li>
+</ul>
+<h3>Tier 4: Dynamic Friction Controller (Output)</h3>
+<ul>
+<li>Continuously adjusts the security posture of the session based on the AI's Trust Score output:</li>
+<li><strong>Trust Score 85-100:</strong> Grants frictionless access.</li>
+<li><strong>Trust Score 40-84:</strong> Triggers an active biometric challenge (e.g., Face Liveness Scan).</li>
+<li><strong>Trust Score 0-39:</strong> Immediately terminates the session.</li>
+</ul>
+<hr />
+<h2>5. Security &amp; Trust Workflow</h2>
+<p>The typical lifecycle of a continuous authentication session in PrismID follows a strict algorithmic pathway:</p>
+<p><strong>Phase 1: Observation &amp; Ingestion</strong>
+1. The user begins interacting with the application normally.
+2. The Client Interface collects telemetry (typing speed, geographic location, browser fingerprint).
+3. The data is hashed locally and streamed securely to the Risk Engine.</p>
+<p><strong>Phase 2: Analysis &amp; Scoring</strong>
+4. The Risk Engine receives the telemetry stream and instantly compares it to the baseline.
+5. The XAI Engine assigns a Trust Score from 0 to 100 based on the deviation.</p>
+<p><strong>Phase 3: Automated Enforcement</strong>
+6. <strong>Scenario A (Safe):</strong> If the Trust Score remains above 85, the session is silently maintained. An event is logged to the Audit Ledger.
+7. <strong>Scenario B (Suspicious):</strong> If the Trust Score drops (e.g., a sudden VPN activation), the Dynamic Friction Controller is invoked. The user is prompted to complete a fast Biometric Token exchange. If successful, trust is restored.
+8. <strong>Scenario C (Critical Threat):</strong> If the Trust Score plummets due to severe anomalies (e.g., automated script injection), the session is immediately killed and a high-alert event is broadcasted.</p>
+<hr />
+<h2>6. Technology Stack</h2>
+<p>PrismID is built using modern, highly responsive frontend web technologies to simulate a real-time cybersecurity operations center.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Framework</strong></td>
+<td style="text-align: left;">React 18, TypeScript, Vite</td>
+<td style="text-align: left;">Core application logic, strict type-safety, and blazing-fast HMR development.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Styling</strong></td>
+<td style="text-align: left;">Vanilla CSS (CSS Grid, Flexbox)</td>
+<td style="text-align: left;">Custom "Glassmorphism" UI, dynamic neon glow variables, and <code>cubic-bezier</code> spring physics for premium tactical animations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3D Rendering</strong></td>
+<td style="text-align: left;">Three.js, React Three Fiber, Drei</td>
+<td style="text-align: left;">Renders the interactive "Trust Sphere" representing global network nodes and active threat vectors in real-time.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data Viz</strong></td>
+<td style="text-align: left;">Recharts, Custom SVGs</td>
+<td style="text-align: left;">Responsive bar charts for XAI breakdowns and active keystroke cadence tracking lines.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Icons</strong></td>
+<td style="text-align: left;">Lucide React</td>
+<td style="text-align: left;">Clean, scalable vector icons used throughout the dashboard and landing page.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. How to Use PrismID (User Guide)</h2>
+<p>PrismID is divided into two primary views:</p>
+<h3>The Landing Page (System Overview)</h3>
+<ul>
+<li><strong>Purpose:</strong> Acts as the marketing and technical overview of the platform.</li>
+<li><strong>Interaction:</strong> Scroll through to read the core architectural pillars. You can interact with the <strong>"Demo Interaction"</strong> buttons to see how the 3D Sphere reacts to different threat levels globally.</li>
+<li><strong>Navigation:</strong> Click the massive <code>Launch System Simulator</code> button or the <code>SECURITY SIMULATOR</code> tab in the header to enter the operations center.</li>
+</ul>
+<h3>The Console Dashboard (Security Simulator)</h3>
+<ul>
+<li><strong>Purpose:</strong> Simulates a live Security Operations Center (SOC) dashboard.</li>
+<li><strong>Interaction:</strong> </li>
+<li><strong>Select a Threat Scenario:</strong> On the right-hand panel, click between different scenarios (e.g., <em>Trusted Corporate Access</em>, <em>Account Takeover Attempt</em>, <em>Bot Network Attack</em>).</li>
+<li><strong>Observe the AI Engine:</strong> Watch the center panel instantly recalculate the "Trust Score". Note how the dynamic background color changes (Green = Safe, Amber = Warning, Red = Critical).</li>
+<li><strong>Read the XAI Rationale:</strong> Look at the bar charts in the center panel to see <em>exactly</em> why a score was lowered (e.g., network mismatch, impossible travel).</li>
+<li><strong>Review the Audit Ledger:</strong> On the left-hand panel, watch the real-time, terminal-style log of events being immutably recorded as the scenario unfolds.</li>
+<li><strong>Watch the Keystroke Cadence:</strong> Observe the real-time simulation of typing speeds at the bottom of the center column, showing the stark difference between human typing and robotic bot automation.</li>
+</ul>
+<hr />
+<h2>8. Future Enhancements</h2>
+<p>While currently a frontend simulation of advanced security concepts, the architecture is designed to accommodate:
+1. <strong>Live Backend Integration:</strong> Connecting the simulation to a real Apache Kafka stream of telemetry data.
+2. <strong>Machine Learning Models:</strong> Replacing the heuristics engine in <code>simulator.ts</code> with a real TensorFlow.js model trained on actual typing patterns.
+3. <strong>WebAuthn Integration:</strong> Implementing real passkey and biometric hardware requests using the browser's native WebAuthn API for the step-up challenges.</p>
+</body></html>
