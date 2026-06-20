@@ -619,3 +619,30 @@ h1, h2, h3, h4 {
   animation: bar-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   min-height: 3px;
 }
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+  header {
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+  main {
+    padding: 16px !important;
+  }
+  .glass-panel {
+    padding: 24px !important;
+  }
+  h1 {
+    font-size: 40px !important;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cyber-button {
+    min-width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
