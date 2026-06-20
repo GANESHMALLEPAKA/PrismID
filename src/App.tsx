@@ -51,7 +51,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', width: '100%', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
       {/* Background Gradients & Effects */}
       <div className="bg-grid-effect" />
       <div className="bg-radial-gradient" />
