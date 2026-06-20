@@ -186,7 +186,7 @@ export default function App() {
                   A decentralized, risk-based authentication engine that continuously validates customer and enterprise identities across digital banking channels. Triggers step-up verification only when risk spikes.
                 </p>
 
-                <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '10px' }}>
                   <button
                     onClick={() => setActiveView('console')}
                     className="cyber-button active"
@@ -213,7 +213,7 @@ export default function App() {
                   <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '14px', fontFamily: 'var(--font-mono)', letterSpacing: '0.05em' }}>
                     DEMO INTERACTION: TRIGGER SYSTEM THREATS ON THE 3D SPHERE
                   </div>
-                  <div style={{ display: 'flex', gap: '14px' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
                     <button
                       onClick={() => handleToggleDemoState('LOW')}
                       className={`cyber-button ${demoThreatState === 'LOW' ? 'active' : ''}`}
@@ -319,7 +319,7 @@ export default function App() {
               </div>
 
               {/* Tab Selector */}
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
                 <button
                   onClick={() => setBiometricTab('face')}
                   className={`cyber-button ${biometricTab === 'face' ? 'active' : ''}`}
